@@ -99,62 +99,10 @@ const vocabData = [
     { word: "ignore", time: 597.40, choices: ["〜を無視する", "気づく", "大切にする", "褒める", "探す"], correct: 0 },
     { word: "maintain", time: 603.55, choices: ["〜を維持する", "主張する", "壊す", "捨てる", "忘れる"], correct: 0 },
     { word: "predict", time: 609.70, choices: ["〜を予測する", "思い出す", "忘れる", "疑う", "隠す"], correct: 0 },
-    { word: "own", time: 615.85, choices: ["〜を所有する", "借りる", "貸す", "捨てる", "壊す"], correct: 0 },
-    { word: "design", time: 345.25, choices: ["壊す", "〜を設計する", "真似する", "隠す", "忘れる"], correct: 1 },
-    { word: "publish", time: 351.40, choices: ["隠す", "〜を出版する", "捨てる", "忘れる", "書く"], correct: 1 },
-    { word: "protect", time: 357.55, choices: ["攻撃する", "〜を保護する", "壊す", "無視する", "忘れる"], correct: 1 },
-    { word: "cause", time: 363.70, choices: ["防ぐ", "〜を引き起こす", "助ける", "解決する", "止める"], correct: 1 },
-    { word: "deal", time: 369.85, choices: ["放置する", "〜を扱う", "壊す", "避ける", "忘れる"], correct: 1 },
-    { word: "accept", time: 376.00, choices: ["拒む", "〜を受け入れる", "疑う", "批判する", "忘れる"], correct: 1 },
-    { word: "apply", time: 382.15, choices: ["無視する", "〜を適用する", "壊す", "隠す", "忘れる"], correct: 1 },
-    { word: "mention", time: 388.30, choices: ["黙る", "〜に言及する", "忘れる", "疑う", "隠す"], correct: 1 },
-    { word: "feed", time: 394.45, choices: ["奪う", "〜に食べ物を与える", "育てる", "殺す", "逃がす"], correct: 1 },
-    { word: "limit", time: 400.60, choices: ["広げる", "〜を制限する", "壊す", "無視する", "忘れる"], correct: 1 },
-    { word: "remove", time: 406.75, choices: ["置く", "〜を取り除く", "集める", "隠す", "忘れる"], correct: 1 },
-    { word: "replace", time: 412.90, choices: ["そのままにする", "〜を置き換える", "壊す", "忘れる", "隠す"], correct: 1 },
-    { word: "reveal", time: 419.05, choices: ["隠す", "〜を明らかにする", "忘れる", "疑う", "嘘をつく"], correct: 1 },
-    { word: "save", time: 425.20, choices: ["捨てる", "〜を救う", "壊す", "無駄遣いする", "忘れる"], correct: 1 },
-    { word: "seek", time: 431.35, choices: ["逃げる", "〜を探し求める", "捨てる", "隠す", "忘れる"], correct: 1 },
-    { word: "serve", time: 437.50, choices: ["支配する", "〜に役立つ", "邪魔する", "忘れる", "疑う"], correct: 1 },
-    { word: "settle", time: 443.65, choices: ["かき混ぜる", "〜を解決する", "壊す", "忘れる", "逃げる"], correct: 1 },
-    { word: "survive", time: 449.80, choices: ["死ぬ", "〜を生き残る", "殺す", "忘れる", "去る"], correct: 1 },
-    { word: "threaten", time: 455.95, choices: ["助ける", "〜を脅す", "励ます", "守る", "許す"], correct: 1 },
-    { word: "vary", time: 462.10, choices: ["維持する", "変化する", "壊す", "忘れる", "集める"], correct: 1 },
-    { word: "warn", time: 468.25, choices: ["褒める", "〜に警告する", "誘う", "疑う", "忘れる"], correct: 1 },
-    { word: "waste", time: 474.40, choices: ["大切にする", "〜を浪費する", "拾う", "洗う", "置く"], correct: 1 },
-    { word: "approach", time: 480.55, choices: ["遠ざかる", "〜に近づく", "止まる", "逃げる", "待つ"], correct: 1 },
-    { word: "attend", time: 486.70, choices: ["欠席する", "〜に出席する", "忘れる", "邪魔する", "批判する"], correct: 1 },
-    { word: "avoid", time: 492.85, choices: ["求める", "〜を避ける", "ぶつかる", "探す", "待つ"], correct: 1 },
-    { word: "concern", time: 499.00, choices: ["無関心でいる", "〜に関係する", "忘れる", "壊す", "隠す"], correct: 1 },
-    { word: "deny", time: 505.15, choices: ["認める", "〜を否定する", "信じる", "忘れる", "期待する"], correct: 1 },
-    { word: "determine", time: 511.30, choices: ["迷う", "〜を決定する", "試す", "学ぶ", "教える"], correct: 1 },
-    { word: "divide", time: 517.45, choices: ["合わせる", "〜を分割する", "壊す", "捨てる", "隠す"], correct: 1 },
-    { word: "employ", time: 523.60, choices: ["解雇する", "〜を雇う", "育てる", "教える", "呼ぶ"], correct: 1 },
-    { word: "engage", time: 529.75, choices: ["離れる", "〜に従事する", "忘れる", "疑う", "拒否する"], correct: 1 },
-    { word: "examine", time: 535.90, choices: ["放置する", "〜を調査する", "信じる", "壊す", "忘れる"], correct: 1 },
-    { word: "express", time: 542.05, choices: ["隠す", "〜を表現する", "忘れる", "疑う", "嘘をつく"], correct: 1 },
-    { word: "suit", time: 548.20, choices: ["〜に似合う", "壊す", "嫌う", "忘れる", "脱ぐ"], correct: 0 },
-    { word: "occur", time: 554.35, choices: ["〜が起こる", "消える", "止まる", "防ぐ", "忘れる"], correct: 0 },
-    { word: "attach", time: 560.50, choices: ["〜を取り付ける", "外す", "捨てる", "壊す", "隠す"], correct: 0 },
-    { word: "settle", time: 566.65, choices: ["解決する", "かき混ぜる", "壊す", "忘れる", "逃げる"], correct: 0 },
-    { word: "admire", time: 572.80, choices: ["〜に感嘆する", "見下す", "忘れる", "嫌う", "疑う"], correct: 0 },
-    { word: "manage", time: 578.95, choices: ["〜を管理する", "失敗する", "忘れる", "壊す", "隠す"], correct: 0 },
-    { word: "admit", time: 585.10, choices: ["〜を認める", "拒否する", "疑う", "忘れる", "隠す"], correct: 0 },
-    { word: "appreciate", time: 591.25, choices: ["〜を正しく評価する", "感謝する", "忘れる", "疑う", "壊す"], correct: 0 },
-    { word: "ignore", time: 597.40, choices: ["〜を無視する", "気づく", "大切にする", "褒める", "探す"], correct: 0 },
-    { word: "maintain", time: 603.55, choices: ["〜を維持する", "主張する", "壊す", "捨てる", "忘れる"], correct: 0 },
-    { word: "predict", time: 609.70, choices: ["〜を予測する", "思い出す", "忘れる", "疑う", "隠す"], correct: 0 },
     { word: "own", time: 615.85, choices: ["〜を所有する", "借りる", "貸す", "捨てる", "壊す"], correct: 0 }
-],
+];
 
-// Dynamic YouTube API Loading
-(function loadYoutubeAPI() {
-    const tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-})();
-
+// State variables
 let player;
 let isPlayerReady = false;
 let currentQuiz = null;
@@ -164,16 +112,13 @@ const TOTAL_QUESTIONS = 50;
 
 // YouTube IFrame API Callback (Global)
 window.onYouTubeIframeAPIReady = function () {
-    // Check if we are running on file:// protocol
-    const isLocalFile = window.location.protocol === 'file:';
-    if (isLocalFile) {
-        console.warn("YouTube API might have issues with 'file://' protocol. Consider using a local server (Live Server, etc.)");
-    }
+    console.log("YouTube API Ready callback fired.");
+    document.getElementById('api-status').textContent = "動画プレーヤーを初期化中...";
 
     player = new YT.Player('player', {
-        height: '0',
-        width: '0',
-        videoId: 'RNNf7vd880c', // System English Vocabulary 1-100
+        height: '1',
+        width: '1',
+        videoId: 'RNNf7vd880c',
         playerVars: {
             'autoplay': 0,
             'controls': 0,
@@ -181,9 +126,8 @@ window.onYouTubeIframeAPIReady = function () {
             'fs': 0,
             'rel': 0,
             'modestbranding': 1,
-            'enablejsapi': 1,
-            // For local files, providing no origin or '*' is sometimes more reliable than 'null'
-            'origin': isLocalFile ? null : window.location.origin
+            'enablejsapi': 1
+            // origin is removed for better compatibility on various environments
         },
         events: {
             'onReady': onPlayerReady,
@@ -192,24 +136,32 @@ window.onYouTubeIframeAPIReady = function () {
         }
     });
 
-    // Fallback: If onReady doesn't fire after 5 seconds but the video works, force ready
-    // (Sometimes audio works even if cross-origin UI communication fails)
+    // Fallback: If onReady doesn't fire after 8 seconds, force it
     setTimeout(() => {
         if (!isPlayerReady) {
-            console.log("Forcing ready state as fallback...");
+            console.warn("Player 'onReady' not fired. Forcing start...");
+            document.getElementById('api-status').textContent = "通信が不安定ですが、開始を試みます";
             onPlayerReady();
         }
-    }, 5000);
+    }, 8000);
 };
 
 function onPlayerError(event) {
     console.error("YouTube Player Error:", event.data);
-    document.getElementById('api-status').textContent = "YouTube 読み込みエラー (再読み込みしてください)";
+    let msg = "YouTube 読み込みエラー";
+    if (event.data === 2) msg = "動画IDが無効です";
+    if (event.data === 5) msg = "ブラウザがこのプレーヤーに対応していません";
+    if (event.data === 100) msg = "動画が見つからないか削除されています";
+    if (event.data === 101 || event.data === 150) msg = "動画の再生が制限されています";
+
+    document.getElementById('api-status').textContent = msg + " (再読み込みしてください)";
     document.getElementById('api-status').style.color = "#ef4444";
 }
 
 function onPlayerReady(event) {
+    if (isPlayerReady) return;
     isPlayerReady = true;
+    console.log("Player is synchronized and ready.");
     document.getElementById('api-status').textContent = "YouTube 連携完了";
     document.getElementById('api-status').classList.add('ready');
     const startBtn = document.getElementById('start-btn');
@@ -356,3 +308,11 @@ class VocabQuizApp {
 
 // Initialize App
 const app = new VocabQuizApp();
+
+// Dynamic YouTube API Loading (Moved to end to ensure callbacks are ready)
+(function loadYoutubeAPI() {
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+})();
