@@ -367,9 +367,10 @@ h1 {
     line-height: 1.6;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     html {
         font-size: 20px;
+        -webkit-text-size-adjust: 100%;
     }
 
     .intro-text {
