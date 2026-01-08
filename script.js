@@ -141,7 +141,7 @@ function initPlayer() {
     });
 
     // Fallback: If onReady doesn't fire after 10 seconds, force it
-    setTimeout(() => {
+    setTimeout(function () {
         if (!isPlayerReady) {
             console.warn("Fallback: Forcing ready.");
             onPlayerReady();
@@ -183,15 +183,16 @@ class VocabQuizApp {
     }
 
     init() {
-        document.getElementById('start-btn').onclick = () => this.startQuiz();
-        document.getElementById('restart-btn').onclick = () => this.startQuiz();
-        document.getElementById('replay-btn').onclick = () => this.playWordAudio();
-        document.getElementById('next-btn').onclick = () => this.nextQuestion();
+        var self = this;
+        document.getElementById('start-btn').onclick = function () { self.startQuiz(); };
+        document.getElementById('restart-btn').onclick = function () { self.startQuiz(); };
+        document.getElementById('replay-btn').onclick = function () { self.playWordAudio(); };
+        document.getElementById('next-btn').onclick = function () { self.nextQuestion(); };
     }
 
     startQuiz() {
         // Shuffle and pick 50
-        this.currentSet = [...vocabData].sort(() => 0.5 - Math.random()).slice(0, TOTAL_QUESTIONS);
+        this.currentSet = vocabData.slice().sort(function () { return 0.5 - Math.random(); }).slice(0, TOTAL_QUESTIONS);
         currentQuestionIndex = 0;
         score = 0;
         this.switchScreen('quiz-screen');
@@ -208,13 +209,14 @@ class VocabQuizApp {
         document.getElementById('progress-bar').style.width = `${(currentQuestionIndex / TOTAL_QUESTIONS) * 100}%`;
 
         // Generate Options
-        const grid = document.getElementById('options-grid');
+        var grid = document.getElementById('options-grid');
         grid.innerHTML = '';
-        currentQuiz.choices.forEach((choice, idx) => {
-            const btn = document.createElement('button');
+        var self = this;
+        currentQuiz.choices.forEach(function (choice, idx) {
+            var btn = document.createElement('button');
             btn.className = 'option-btn';
             btn.textContent = choice;
-            btn.onclick = () => this.handleAnswer(idx);
+            btn.onclick = function () { self.handleAnswer(idx); };
             grid.appendChild(btn);
         });
 
@@ -229,7 +231,7 @@ class VocabQuizApp {
             player.seekTo(currentQuiz.time, true);
             player.playVideo();
             // Stop after 1.8 seconds roughly to play only English pronunciation
-            setTimeout(() => {
+            setTimeout(function () {
                 player.pauseVideo();
             }, 1800);
         }
@@ -277,7 +279,10 @@ class VocabQuizApp {
     }
 
     switchScreen(id) {
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        var screens = document.querySelectorAll('.screen');
+        for (var i = 0; i < screens.length; i++) {
+            screens[i].classList.remove('active');
+        }
         document.getElementById(id).classList.add('active');
     }
 
