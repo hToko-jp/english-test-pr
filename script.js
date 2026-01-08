@@ -112,12 +112,16 @@ const TOTAL_QUESTIONS = 50;
 
 // YouTube IFrame API Callback (Global)
 window.onYouTubeIframeAPIReady = function () {
-    console.log("YouTube API Ready callback fired.");
-    document.getElementById('api-status').textContent = "動画プレーヤーを初期化中...";
+    console.log("YouTube API Ready.");
+    initPlayer();
+};
+
+function initPlayer() {
+    if (player) return; // Prevent double init
 
     player = new YT.Player('player', {
-        height: '1',
-        width: '1',
+        height: '200',
+        width: '320',
         videoId: 'RNNf7vd880c',
         playerVars: {
             'autoplay': 0,
@@ -126,8 +130,8 @@ window.onYouTubeIframeAPIReady = function () {
             'fs': 0,
             'rel': 0,
             'modestbranding': 1,
-            'enablejsapi': 1
-            // origin is removed for better compatibility on various environments
+            'enablejsapi': 1,
+            'origin': window.location.protocol === 'file:' ? '*' : window.location.origin
         },
         events: {
             'onReady': onPlayerReady,
@@ -136,15 +140,14 @@ window.onYouTubeIframeAPIReady = function () {
         }
     });
 
-    // Fallback: If onReady doesn't fire after 8 seconds, force it
+    // Fallback: If onReady doesn't fire after 10 seconds, force it
     setTimeout(() => {
         if (!isPlayerReady) {
-            console.warn("Player 'onReady' not fired. Forcing start...");
-            document.getElementById('api-status').textContent = "通信が不安定ですが、開始を試みます";
+            console.warn("Fallback: Forcing ready.");
             onPlayerReady();
         }
-    }, 8000);
-};
+    }, 10000);
+}
 
 function onPlayerError(event) {
     console.error("YouTube Player Error:", event.data);
@@ -309,10 +312,17 @@ class VocabQuizApp {
 // Initialize App
 const app = new VocabQuizApp();
 
-// Dynamic YouTube API Loading (Moved to end to ensure callbacks are ready)
-(function loadYoutubeAPI() {
+// If API already loaded before script runs
+if (window.YT && window.YT.Player) {
+    initPlayer();
+}
+
+// Dynamic YouTube API Loading
+function loadYoutubeAPI() {
+    if (document.querySelector('script[src*="youtube.com/iframe_api"]')) return;
     const tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
     const firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-})();
+}
+loadYoutubeAPI();

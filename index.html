@@ -16,8 +16,9 @@
 <body>
     <div class="background-decor"></div>
 
-    <!-- YouTube Player Container (Hidden) -->
-    <div id="player-wrapper" style="position: absolute; left: -9999px;">
+    <!-- YouTube Player Container (Minimally visible but hidden for compatibility) -->
+    <div id="player-wrapper"
+        style="position: fixed; top: 0; left: 0; width: 1px; height: 1px; opacity: 0.001; overflow: hidden; pointer-events: none; z-index: -1;">
         <div id="player"></div>
     </div>
 
@@ -78,7 +79,6 @@
         </section>
     </main>
 
-    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
 </body>
 
