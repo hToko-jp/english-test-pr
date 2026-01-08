@@ -372,6 +372,10 @@ h1 {
         font-size: 20px;
     }
 
+    .intro-text {
+        display: none;
+    }
+
     .quiz-container {
         height: 100vh;
         width: 100%;
